@@ -7,7 +7,11 @@ import Root from "root";
 let wrapped;
 
 beforeEach(() => {
-  wrapped = mount(<Root><CommentBox /></Root>);
+  wrapped = mount(
+    <Root>
+      <CommentBox />
+    </Root>
+  );
 });
 
 afterEach(() => {
@@ -20,7 +24,6 @@ it("has a text area and b button", () => {
 });
 
 describe("the text area", () => {
-
   beforeEach(() => {
     //simulate change event ,provide fake event object
     wrapped.find("textarea").simulate("change", {

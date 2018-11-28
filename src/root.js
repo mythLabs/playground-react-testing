@@ -3,9 +3,11 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import reducers from "reducers";
 
-const Root = props => {
+const Root = ({children,intitialState = {}}) => {
   return (
-    <Provider store={createStore(reducers, {})}>{props.children}</Provider>
+    <Provider store={createStore(reducers, intitialState)}>
+      {children}
+    </Provider>
   );
 };
 
